@@ -1,0 +1,14 @@
+.mapStop.done circle {
+  fill: #2d7d46;
+}
+
+.mapStop.current circle {
+  stroke: #101817;
+  stroke-width: 5;
+}
+
+.mapStop.selected circle {
+  fill: var(--warn);
+  stroke: #ffe8d5;
+  stroke-width: 5;
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = "santa-fe-trip-github-v2-map-progress";
+const CACHE_NAME = "santa-fe-trip-github-v3-before-roll-logic";
 const ASSETS = ["./", "./index.html", "./styles.css", "./map-progress-fix.css", "./app.js", "./map-progress-fix.js", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", event => {

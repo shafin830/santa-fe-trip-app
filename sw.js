@@ -1,5 +1,5 @@
-const CACHE_NAME = "santa-fe-trip-github-v6-cache-bust-before-roll";
-const ASSETS = ["./", "./index.html", "./styles.css", "./map-progress-fix.css", "./app.js", "./map-progress-fix.js", "./before-roll-fix-v2.js", "./manifest.webmanifest", "./icon.svg"];
+const CACHE_NAME = "santa-fe-trip-github-v7-caution-miles-map";
+const ASSETS = ["./", "./index.html", "./styles.css", "./map-progress-fix.css", "./trip-enhancements-v1.css", "./app.js", "./map-progress-fix.js", "./before-roll-fix-v2.js", "./trip-enhancements-v1.js", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));

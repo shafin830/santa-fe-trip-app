@@ -1,5 +1,5 @@
-const CACHE_NAME = "santa-fe-trip-github-v1";
-const ASSETS = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./icon.svg"];
+const CACHE_NAME = "santa-fe-trip-github-v2-map-progress";
+const ASSETS = ["./", "./index.html", "./styles.css", "./map-progress-fix.css", "./app.js", "./map-progress-fix.js", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));

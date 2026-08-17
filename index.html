@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20312f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Santa Fe Trip">
+  <title>Fargo to Santa Fe Trip</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Cheaper 30 MPG Plan v12</p>
+      <h1>Fargo to Santa Fe</h1>
+    </div>
+    <button id="resetProgress" class="iconButton" type="button" aria-label="Reset progress">↺</button>
+  </header>
+
+  <main>
+    <section class="summaryBand">
+      <div>
+        <span class="label">Counted total</span>
+        <strong id="summaryTotal">$289.30</strong>
+      </div>
+      <div>
+        <span class="label">Fuel</span>
+        <strong>$189.88</strong>
+      </div>
+      <div>
+        <span class="label">Food</span>
+        <strong>$22.07</strong>
+      </div>
+      <div>
+        <span class="label">Hotel</span>
+        <strong>$77.35</strong>
+      </div>
+    </section>
+
+    <section class="startCosts">
+      <h2>Start Costs</h2>
+      <div class="actualInputs">
+        <label>Fargo full tank $<input id="startFuel" inputmode="decimal" type="number" min="0" step="0.01" placeholder="49.00"></label>
+        <label>Packed lattes/items $<input id="startOther" inputmode="decimal" type="number" min="0" step="0.01" placeholder="8.32"></label>
+      </div>
+      <p id="startCostNote">Blank means planned start cost: $57.32.</p>
+    </section>
+
+    <nav class="tabs" aria-label="Views">
+      <button class="tab active" data-view="drive" type="button">Drive</button>
+      <button class="tab" data-view="stops" type="button">Stops</button>
+      <button class="tab" data-view="map" type="button">Map</button>
+      <button class="tab" data-view="checks" type="button">Checks</button>
+    </nav>
+
+    <section id="drive" class="view active">
+      <div class="progressLine">
+        <span id="progressText"></span>
+        <span id="dayText"></span>
+      </div>
+      <div class="completionBar" aria-label="Trip completion">
+        <div id="completionFill"></div>
+      </div>
+      <article id="activeCard" class="legCard"></article>
+      <div class="navButtons">
+        <button id="prevLeg" type="button">Previous</button>
+        <button id="completeLeg" type="button">Mark Done</button>
+        <button id="nextLeg" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="stops" class="view">
+      <div id="stopList" class="stopList"></div>
+    </section>
+
+    <section id="map" class="view">
+      <div class="mapPanel">
+        <h2>Whole-Trip Overview</h2>
+        <div class="routeMap" aria-label="Schematic route map">
+          <svg viewBox="0 0 360 560" role="img">
+            <path d="M300 35 L288 95 L298 135 L315 185 L230 210 L145 218 L90 245 L82 300 L95 360 L74 418 L92 485 L35 525" fill="none" stroke="#f3e7bd" stroke-width="18" stroke-linecap="round"/>
+            <path d="M300 35 L288 95 L298 135 L315 185 L230 210 L145 218 L90 245 L82 300 L95 360 L74 418 L92 485 L35 525" fill="none" stroke="#2f6f73" stroke-width="7" stroke-linecap="round"/>
+            <g id="mapPins"></g>
+          </svg>
+        </div>
+        <article id="mapStopDetails" class="mapStopDetails" aria-live="polite"></article>
+        <button id="openFullRoute" type="button">Open Full Route in Google Maps</button>
+      </div>
+    </section>
+
+    <section id="checks" class="view">
+      <div class="checkGrid">
+        <article>
+          <h2>Before Day 1</h2>
+          <p>Check weather, ND Roads, SD511, Iowa 511, Nebraska 511. Fill tank to 14.0 gal and pack all four lattes, water, PB sandwich, and apple.</p>
+        </article>
+        <article>
+          <h2>Before Denver</h2>
+          <p>At Hudson, set Maps to Avoid tolls. Expected free corridor: I-76 west, I-270 west, I-25 south. Reject E-470 and Express Lanes.</p>
+        </article>
+        <article>
+          <h2>Before Cuerno Verde</h2>
+          <p>At Pueblo, check COtrip/rest-area status, posted signs, fatigue, temperature, and whether sleeping in the car is safe without relying on climate control.</p>
+        </article>
+        <article>
+          <h2>Before Day 3</h2>
+          <p>Do not leave at 3:45 AM unless alert. Check COtrip for Raton Pass and NMRoads for I-25. If drowsy, stay parked or find safer rest.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

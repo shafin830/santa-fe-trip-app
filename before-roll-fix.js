@@ -34,7 +34,7 @@
 
     const text = beforeByLeg[currentLegNumber()];
     const body = [...beforeBlock.querySelectorAll("p")].find(p => !p.classList.contains("sectionTitle"));
-    if (body && text) body.textContent = text;
+    if (body && text && body.textContent !== text) body.textContent = text;
 
     if (beforeBlock.compareDocumentPosition(mapsBlock) & Node.DOCUMENT_POSITION_PRECEDING) {
       card.insertBefore(beforeBlock, mapsBlock);
